@@ -78,8 +78,8 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="zIv-Xz-6jV"/>
                                 </connections>
                             </collectionView>
-                            <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" translatesAutoresizingMaskIntoConstraints="NO" id="SSN-lh-ztq">
-                                <rect key="frame" x="32" y="793" width="23" height="37"/>
+                            <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="SSN-lh-ztq">
+                                <rect key="frame" x="32" y="793" width="39" height="37"/>
                                 <color key="pageIndicatorTintColor" red="0.1843137255" green="0.67450980390000004" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="currentPageIndicatorTintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </pageControl>

@@ -19,9 +19,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        // Discomment the next two lines, only you can't
+        // Uncomment the next two lines, if you didn't implement the Delegate and DataSource from the Storyboard
         //container.delegate = self
         //container.dataSource = self
+        // Indicate the number of pages the receiver shows
+        self.pageIndicator.numberOfPages = images.count
     }
     
     // MARK: Methods UICollectionView
@@ -34,9 +36,17 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         // Create cell to show
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "pageCell", for: indexPath) as! PageCollectionViewCell
         // Set resources
-        cell.image.image = UIImage(named: images[indexPath.row])
-        cell.title.text = titles[indexPath.row]
-        cell.descrip.text = descriptions[indexPath.row]
+        cell.image.image = UIImage(named: self.images[indexPath.row])
+        cell.title.text = self.titles[indexPath.row]
+        cell.descrip.text = self.descriptions[indexPath.row]
+        // Create Animation
+        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 5, options: .transitionFlipFromLeft, animations: {
+            cell.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+        }, completion: { finished in
+            UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 5, options: .curveEaseInOut, animations: {
+                cell.transform = CGAffineTransform(scaleX: 1, y: 1)
+            }, completion: nil)
+        })
         return cell
     }
     
